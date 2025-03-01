@@ -3,8 +3,12 @@ const express = require("express");
 const app = express();
 
 app.get("/getUserData", (req, res) => {
-  throw new Error("error");
-  res.send("User data sent");
+  try {
+    throw new Error("error");
+    res.send("User data sent");
+  } catch (error) {
+    res.send("Some error occured");
+  }
 });
 
 app.use("/", (err, req, res, next) => {
