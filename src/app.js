@@ -2,28 +2,27 @@ const express = require("express");
 
 const app = express();
 
-app.get("/admin/getAllData", (req, res, next) => {
-  // const token = req.body?.token;
-  // const token = "admin";
-  const token = "abcd";
-  const isAdmin = token === "admin";
-  if (isAdmin) {
-    res.send("All data");
+//! here we have two routes, one for getting all data and one for deleting user, and both routes have same code, so we can create a middleware to handle all get post ,... requests
+
+// Middleware
+app.use("/admin", (req, res, next) => {
+  const token = "nitya";
+  const isAdmin = token === "xyz";
+  if (!isAdmin) {
+    res.status(401).send("Unauthoriized Request");
   } else {
-    res.status(401).send("Unauthorized");
+    next();
   }
 });
 
-app.get("/admin/deleteUser", (req, res, next) => {
-  // const token = req.body?.token;
-  // const token = "admin";
-  const token = "abcd";
-  const isAdmin = token === "admin";
-  if (isAdmin) {
-    res.send("All data");
-  } else {
-    res.status(401).send("Unauthorized");
-  }
+//* here i have used same code for both the routes, so i will create a middleware for this, and so we need middleware for this
+
+app.get("/admin/getAllData", (req, res) => {
+  res.send("All data Sent");
+});
+
+app.get("/admin/deleteUser", (req, res) => {
+  res.send("All Data deleted");
 });
 
 app.listen(3000, () => {
