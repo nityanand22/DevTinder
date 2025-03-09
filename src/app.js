@@ -5,6 +5,7 @@ const User = require("./models/user");
 
 app.use(express.json());
 
+// Inserting data in the database
 app.post("/signup", async (req, res) => {
   // Creating a new instance of user model
   const user = new User(req.body);
@@ -38,6 +39,29 @@ app.get("/feed", async (req, res) => {
     const users = await User.find({});
     res.send(users);
   } catch (error) {}
+});
+
+// Delete a User
+app.delete("/user", async (req, res) => {
+  const userId = req.body.userId;
+  try {
+    const user = await User.findByIdAndDelete(userId);
+    res.send("User deleted successfully");
+  } catch (error) {
+    res.status(400).send("can't find data");
+  }
+});
+
+// Update data of a user
+app.patch("/user", async (req, res) => {
+  const userId = req.body.userId;
+  const data = req.body;
+  try {
+    await User.findByIdAndUpdate({ _id: userId }, data);
+    res.send("user updated");
+  } catch (error) {
+    res.status(400).send("can't find data");
+  }
 });
 
 connectDB()
