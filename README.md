@@ -20,3 +20,7 @@
 - Create a UserSchema and user model
 - Create post /Sign up api to add data to database
 - push some docs using api calls from postman
+
+- difference between js object and json
+- add the express.json middleware in our app
+- make your sign up API dynamic to receive data from the end user
