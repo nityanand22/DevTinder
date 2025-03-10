@@ -35,3 +35,4 @@
 - add api level validation pn patch request and signup post api
 - add api validation for each fields
   (its called data sanitization)
+- explore validator libary functions and use for validations in schema
