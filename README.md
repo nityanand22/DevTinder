@@ -32,3 +32,6 @@
 - create a custom validate function for gender
 - improve the DB schema - put all appropriate validations on each field in schema
 - add timestamps to the userSchema
+- add api level validation pn patch request and signup post api
+- add api validation for each fields
+  (its called data sanitization)
