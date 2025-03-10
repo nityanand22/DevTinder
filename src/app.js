@@ -57,10 +57,13 @@ app.patch("/user", async (req, res) => {
   const userId = req.body.userId;
   const data = req.body;
   try {
-    await User.findByIdAndUpdate({ _id: userId }, data);
+    await User.findByIdAndUpdate({ _id: userId }, data, {
+      returnDocument: "after",
+      runValidators: true,
+    });
     res.send("user updated");
   } catch (error) {
-    res.status(400).send("can't find data");
+    res.status(400).send(error.message);
   }
 });
 
