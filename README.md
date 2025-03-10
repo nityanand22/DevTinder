@@ -25,3 +25,10 @@
 - add the express.json middleware in our app
 - make your sign up API dynamic to receive data from the end user
 - difference between patch and put
+
+- Explore schema type options from the documentation
+- add lowercase, unique, required, min, minlength, trim
+- add default
+- create a custom validate function for gender
+- improve the DB schema - put all appropriate validations on each field in schema
+- add timestamps to the userSchema
