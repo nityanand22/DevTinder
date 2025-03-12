@@ -43,3 +43,10 @@
 - create passwordHash using bcrypt.hash & save the user with encrypt password
 - create login api
 - compare passworcs and throe error if email or password is invalid
+
+- install cookie parser
+- just send a dummy cookie
+- create GET /profile api and check if you get the cookie back
+- install jsonwebtoken
+- in login api , after email and password validation , create a JWT token and send it to user inside cookies
+- read the cookies inside your profile api and find the looged in user
