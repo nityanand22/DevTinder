@@ -36,3 +36,10 @@
 - add api validation for each fields
   (its called data sanitization)
 - explore validator libary functions and use for validations in schema
+- \***\* NEVER TRUST req.body \*\***
+
+- validate data in signup API
+- install bcrypt package
+- create passwordHash using bcrypt.hash & save the user with encrypt password
+- create login api
+- compare passworcs and throe error if email or password is invalid
