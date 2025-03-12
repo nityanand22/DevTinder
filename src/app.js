@@ -48,7 +48,7 @@ app.post("/login", async (req, res) => {
         expiresIn: "1d",
       });
       // Add the token to cookie and send the response back to user
-      res.cookie("token", token);
+      res.cookie("token", token, { httpOnly: true });
       res.send("Login Successfully");
     } else {
       throw new Error("Incorrect password");
