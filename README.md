@@ -67,3 +67,5 @@
 - Create PATCH /profile/edit
 - Create PATCH /profile/password API
 - Make you validate all data in every POST, PATCH apis
+
+- read about compound index articles
