@@ -68,4 +68,18 @@
 - Create PATCH /profile/password API
 - Make you validate all data in every POST, PATCH apis
 
+- Create connection request schema
+- ssend connection request api
+- proper validation of data
+- think about corner cases
+- $or (logical queries) in mongo db
+- Schema.pre("save") function
 - read about compound index articles
+- why do we need index in DB
+- What is the advantage and disadvantage of creating index
+- disadvantage of creating a lot of indexing
+
+- "/request/review/:status/:requestId" write proper validation for this api
+- Thought process GET vs POST
+- "/user/requests/received" implement
+- "/user/connections" implement
